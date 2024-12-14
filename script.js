@@ -3,9 +3,8 @@ class Person {
 		this.name = name;
 		this.age = age;
 	}
-
 	greet() {
-		console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
+		console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
 	}
 }
 
@@ -14,17 +13,19 @@ class Employee extends Person {
 		super(name, age); // Call the parent class constructor
 		this.jobTitle = jobTitle;
 	}
-
 	jobGreet() {
 		console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
 	}
 }
-let person = new Person("Alice", 25);
-person.greet(); // Output: Hello, my name is Alice, I am 25 years old.
 
-let emp = new Employee("Bob", 30, "Manager");
-emp.jobGreet(); // Output: Hello, my name is Bob, I am 30 years old, and my job title is Manager.
-emp.greet();    // Output: Hello, my name is Bob, I am 30 years old.
+// Test cases
+const emp = new Employee("Bob", 30, "Manager");
+emp.jobGreet();
+emp.greet();
+
+const person = new Person("Alice", 25);
+person.greet();
+
 // Do not change code below this line
 window.Person = Person;
 window.Employee = Employee;
